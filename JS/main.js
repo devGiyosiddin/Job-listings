@@ -17,24 +17,32 @@ tagItems.forEach(tag => {
             selectedTagElement.textContent = selectedTag;
             selectedTagElement.setAttribute('data-tag', selectedTag);
             selectedTagElement.classList.add('selected-tag');
-            selectedTagsContainer.appendChild(selectedTagElement);
+            selectedTagsContainer.prepend(selectedTagElement);
             
             // Добавляем кнопку удаления тега
             const closeTag = document.createElement('span');
             closeTag.classList.add('close-tag');
-            closeTag.setAttribute('src', 'img/close.svg');
-            selectedTagElement.appendChild(closeTag);
-            
+            selectedTagElement.prepend(closeTag);
+
             // Обработчик клика на кнопке удаления тега
             closeTag.addEventListener('click', (event) => {
                 event.stopPropagation();
                 selectedTagElement.remove();
                 filterAndDisplayItems();
             });
+            // Clear Tags
+            const clearTags = document.querySelector('.clear-tags');
+            clearTags.addEventListener('click', () => {
+                selectedTagElement.remove();
+                
+                filterAndDisplayItems();
+            })
         }
         filterAndDisplayItems();
     });
 });
+
+
 
 // Функция для сортировки и отображения элементов по выбранным тегам
 function filterAndDisplayItems() {

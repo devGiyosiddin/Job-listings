@@ -125,6 +125,23 @@ img {
   background-color: var(--black);
 }
 
+.clear-tags {
+  color: #5ca5a5;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 185%;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-decoration-skip-ink: none;
+  text-align: right;
+  margin-left: auto;
+}
+.clear-tags:hover {
+  text-decoration: underline;
+}
+
+
 /* JOB-LISTINGS - ITEM */
 .job-listings {
   list-style: none;
@@ -255,9 +272,16 @@ img {
   color: var(--first);
   border-radius: 4px;
   background: var(--first-op01);
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 .job-listings-tags-item:not(:last-child) {
   margin-right: 16px;
+}
+
+.job-listings-tags-item:hover {
+  background-color: var(--first);
+  color: var(--body-bg);
 }
 
 
