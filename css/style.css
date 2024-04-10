@@ -203,14 +203,20 @@ img {
   font-size: 11px;
   font-style: normal;
   font-weight: 700;
-  line-height: 14px;
-  letter-spacing: -0.085px;
+  line-height: 127%;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   border-radius: 12px;
   padding: 6px 8px 4px;
 }
 
-.badge {}
+.job-listings-info-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+
 .badge:not(:last-child) {
   margin-right: 8px;
 }
@@ -263,8 +269,8 @@ img {
 .job-listings-tags-list {
   display: flex;
   align-items: center;
-  margin-left: auto;
   list-style: none;
+  padding: 0;
 }
 
 .job-listings-tags-item {
@@ -285,18 +291,6 @@ img {
 }
 
 
-/* RETINA */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-  .site-header {
-    background-image: url("../img/Site-header-bg@2x.jpg");
-  }
-}
-
 @media only screen and (max-width: 1200px) {
   
 }
@@ -304,12 +298,9 @@ only screen and (min-resolution: 2dppx) {
   .job-listings-tags-list {
     width: 40vw;
     display: flex;
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap;
+    align-content: normal;
     justify-content: end;
-  }
-  .job-listings-tags-item:not(:last-child) {
-    margin-right: 0;
-    margin-left: 10px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -320,14 +311,37 @@ only screen and (min-resolution: 2dppx) {
   .job-listings-item {
     padding: 24px;
   }
+  .job-listings-info-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .job-listings-tags-list {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .job-listings-info {
+    margin-bottom: 20px;
+  }
+  .job-listings-addl-list {
+    flex-direction: row;
+  }
 }
 @media only screen and (max-width: 600px) {
+  .job-listings-tags-list {
+    min-height: 80px;
+  }
+}
+
+@media only screen and (max-width: 468px) {
+  .container {
+    padding: 0 24px;
+  }
   .job-listings-item {
     position: relative;
     padding-top: 32px;
   }
   .job-listings-item:not(:last-child) {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
   .job-listings-logo {
     position: absolute;
@@ -336,54 +350,67 @@ only screen and (min-resolution: 2dppx) {
     top: -10%;
     margin-right: 0;
   }
-}
-
-@media only screen and (max-width: 481px) {
-  .container {
-    padding: 0 24px;
+  .job-listings-info-position-link {
+    font-size: 15px;
   }
-  .job-listings-item {
-    flex-direction: column;
-  }
-  .job-listings {
-    width: 100%;
-  }
-  .job-listings-addl-list {
-    display: ruby;
-    flex-direction: initial;
-  }
-  .job-listings-info {
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid #b7c4c4;
-  }
-  .job-listings-tags-list {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: start;
-    margin: 0;
-    padding: 0;
-  }
-  .job-listings-tags-item:not(:last-child) {
-    margin-right: 5px;
-    margin-left: 0;
-    margin-bottom: 5px;
-  }
-  .job-listings-addl-item {
-    flex-wrap: nowrap;
-  }
-  .job-listings-info {
-    display: inline-block;
-  }
-  .job-listings-company-badges {
-    display: flex;
-    flex-wrap: wrap;
+  .job-listings-company-name {
+    font-size: 13px;
   }
 }
 @media only screen and (max-width: 350px) {
+  .job-listings-tags-list {
+    min-height: 120px;
+  }
+  .job-listings-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+  .badge-green {
+    margin-bottom: 8px;
+  }
+  
+}
+@media only screen and (max-width: 245px) {
+  .site-header {
+    height: 10vh;
+  }
+  .job-listings-logo {
+    top: -5%;
+  }
   .job-listings-addl-list {
+    flex-direction: column;
+  }
+  .job-listings-tags-list {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
+    align-items: start;
+  }
+  .job-listings-company-name {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .job-listings-badges {
+    display: block;
+  }
+  .job-listings-tags-item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .job-listings-company-badges {  
+    flex-direction: column;
+  }
+}
+
+
+/* RETINA */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .site-header {
+    background-image: url("../img/Site-header-bg@2x.jpg");
   }
 }
