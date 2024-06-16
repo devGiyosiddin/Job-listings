@@ -101,6 +101,21 @@ img {
   opacity: 0.6;
 }
 
+.site-header__back-link  {
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: grey;
+  color: var(--first);
+  border: 1px solid var(--first);
+  background-color: #fff;
+  transition: 0.5s;
+}
+.site-header__back-link:hover {
+  color: #fff;
+  background-color: var(--first);
+}
+
 /* Tags-box */
 .selected-tags {
   display: none;
@@ -310,6 +325,142 @@ img {
 }
 
 
+
+
+/* ADD-CARD-PAGE */
+.add-card {
+  position: fixed;
+  width: 80vw;
+  height: 80vh;
+  top: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+  padding: 50px;
+  z-index: 10;
+}
+
+.site-header__back-icon {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+.ac-main-content {
+}
+
+.main-header {
+  font-size: 30px;
+  color: #474747;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.ac-form {
+  width: 100%;
+  padding: 0 100px 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ac-form__wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.ac-form__left-box {
+  display: flex;
+  flex-direction: column;
+  
+} 
+.ac-form__right-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.ac-form__input {
+  width: 300px;
+  height: 40px;
+  color: var(--first);
+  border: 0;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-color: #e5efef;
+  padding: 0 20px;
+  margin-bottom: 32px;
+}
+.ac-form__input:hover {
+  border-color: rgb(63, 226, 182);
+}
+
+.ac-form__header {
+  margin-bottom: 10px;
+}
+
+.ac-form__time-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.ac-form__time-selects {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+}
+.ac-form__time-selects__label {
+  cursor: pointer;
+}
+.ac-form__time-selects__input {
+  display: none;
+}
+.ac-form__time-selects__input:checked + .ac-form__time-selects__label {
+  color: #65cdcd;
+}
+
+.ac-form__textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.ac-form__submit {
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  background-color: var(--first);
+  transition: 0.5s;
+  margin-bottom: 40px;
+  margin-left: auto;
+}
+.ac-form__submit:hover {
+  color: var(--first);
+  border: 1px solid var(--first);
+  background-color: var(--body-bg);
+}
+
+.ac-form__select {
+  cursor: pointer;
+}
+/* PLACEHOLDER-STYLES */
+::-webkit-input-placeholder,
+:-moz-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+::-ms-input-placeholder,
+::placeholder {
+  color: #000;
+}
+
+
+/* RESPONSIVE */
 @media only screen and (max-width: 1200px) {
   
 }

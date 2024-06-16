@@ -9,7 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap" rel="stylesheet">
-
+  
+  <!-- Icon -->
+  <link rel="website icon" href="img/job-icon.ico">
+  
+  <!-- JS library -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
   <!-- Styles -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
@@ -21,13 +27,13 @@
       <a href="create-card.html" class="site-header__card-link">Add new Card</a>
     </div>
   </header>
-
+  
   <main class="main-content">
     <div class="container">
       <ul class="selected-tags">
         <span class="clear-tags">Clear</span>
       </ul>
-
+      
       <h1 class="visually-hidden">Jobs offers lisst</h1>
       <ul class="job-listings">
         <li class="job-listings-item bd-left">
@@ -324,6 +330,84 @@
       </ul>
     </div>
   </main>
+  
+  <!-- Modal -->
+  <section class="add-card">
+    <a href="index.html" class="site-header__back-link">
+      <span class="site-header__back-icon">&#x27BE;</span>
+      Back
+  </a>
+    <div class="add-card__wrapper">
+      <section class="ac-main-content">
+        <div class="container">
+          <h2 class="main-header">Add new information about your job</h2>
+          <!-- Form -->
+          <form class="ac-form" action="/submit" method="post">
+            
+            <div class="ac-form__wrapper">
+              <!-- Left box -->
+              <div class="ac-form__left-box">
+                <input class="ac-form__input" type="text" id="company" name="company" placeholder="Company name:">
+              
+                <input class="ac-form__input" type="text" id="field" name="field" placeholder="Enter your job">
+              
+                
+                <div class="ac-form__time-wrapper">
+                  <label for="time" class="ac-form__header">Select time:</label>
+                  <div class="ac-form__time-selects">
+                    <input class="ac-form__time-selects__input" type="radio" id="fullTime" name="time" checked>
+                    <label class="ac-form__time-selects__label" for="fullTime">
+                      Full-time
+                    </label>
+                    <input class="ac-form__time-selects__input" type="radio" id="partTime" name="time">
+                    <label class="ac-form__time-selects__label" for="partTime">
+                      Part-time
+                    </label>
+                  </div>
+                </div>
+              
+              
+                <label class="ac-form__header" for="country">How do you want to work ?</label>
+                <select class="ac-form__select" id="country" name="country" style="width: 100%;">
+                  <!-- List of countries -->
+                  <option selected>Remote</option>
+                  <option value="AF">Afghanistan</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <!-- Add more countries as needed -->
+                </select>
+              </div>
+              
+              <!-- Right box -->
+              <div class="ac-form__right-box">
+                <label class="ac-form__header" for="image">Upload company's logo image:</label>
+                <input class="ac-form__input ac-form__input--file" type="file" id="image" name="image" accept="image/*">
+                <label class="ac-form__header" for="hashtags">Enter your jobs's tags:</label>
+                <textarea class="ac-form__textarea" name="hashtags" id="hashtags" maxlength="5" placeholder="tag1, tag2 (max 5)">Frontend, Backend</textarea>
+                <!-- <input type="text" id="hashtags" name="hashtags"> -->
+              </div>
+            </div>
+
+            <!-- Send button -->
+            <input class="ac-form__submit" type="submit" value="Create">
+          </form>
+          
+          <!-- Include jQuery -->
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <!-- Include Select2 JS -->
+          <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+          <script>
+            $(document).ready(function() {
+              $('#country').select2();
+            });
+          </script>
+        </div>
+      </section>
+    </div>
+  </section>
+  
   <script src="js/main.js"></script>
 </body>
 </html>
