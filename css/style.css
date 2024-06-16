@@ -81,6 +81,24 @@ img {
   background: #5ca5a5 url("../img/Site-header-bg.jpg");
   background-size: auto 100%;
   background-position: center;
+  padding: 50px 0;
+}
+
+.site-header__card-link {
+  float: right;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: grey;
+}
+
+.site-header__card-link:hover {
+  color: rgb(255, 255, 109);
+}
+
+.site-header__card-link:active {
+  opacity: 0.6;
 }
 
 /* Tags-box */
